@@ -8,6 +8,12 @@ public class App {
 	public static void main(String[] parametres) {
 		Controleur.choisirVuePrincipale(VuePvZanor.class);
 		Fenetre.launch(Fenetre.class, parametres);	
+		
+		
+		
+		
+		
+		
 	}
 
 }
