@@ -2,10 +2,14 @@ package controleur;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.sun.media.jfxmedia.logging.Logger;
 
 import architecture.Controleur;
+import controleur.commande.Commande;
+import controleur.commande.CommandeChoisirTerrain;
 import donnee.Exporteur;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
@@ -26,7 +30,6 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class ControleurPvZanor extends Controleur{
 
-	
 	private Plantes.PLANTES plantesChoisi;
 	private Zombies.ZOMBIES zombiesChoisi;
 	private Jardin jardin = new Jardin();
@@ -123,11 +126,23 @@ public class ControleurPvZanor extends Controleur{
 		//exporteur.sauvegarder(legumesDuJardin);
 		exporteur.sauvegarder(jardin);
 	}
-
-	public void notifierClicTerrain(TERRAIN terrain) {
-		VuePvZanor.getInstance().afficherTerrain(terrain);
-		jardin.setTerrain(terrain);
+	public void notifierAnnuler(List<Commande> historique) {
 		
+	}
+
+	protected List<Commande> historique = new ArrayList();
+	protected TERRAIN terrainChoisi = TERRAIN.AUCUN;
+	public void notifierClicTerrain(TERRAIN nouveauTerrain) {
+		Commande commande = new CommandeChoisirTerrain(terrainChoisi, nouveauTerrain);
+		commande.executer(); //VuePvZanor.getInstance().afficherTerrain(terrain);
+		
+		historique.add(commande);
+		this.terrainChoisi = nouveauTerrain;
+		
+		
+		jardin.setTerrain(nouveauTerrain);
+		
+		/*
 		if (terrain == TERRAIN.ENTREE_JOUR)
 			this.musique(1);
 		if (terrain == TERRAIN.ENTREE_NUIT)
@@ -140,6 +155,7 @@ public class ControleurPvZanor extends Controleur{
 			this.musique(5);
 		if (terrain == TERRAIN.TOIT_NUIT)
 			this.musique(6);
+		 */
 	}
 
 }

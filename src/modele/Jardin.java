@@ -8,7 +8,7 @@ import modele.Plantes.PLANTES;
 
 public class Jardin implements Exportable {
 
-	public enum TERRAIN {ENTREE_JOUR, ENTREE_NUIT, PISCINE_JOUR, PISCINE_NUIT, TOIT_JOUR, TOIT_NUIT};
+	public enum TERRAIN {ENTREE_JOUR, ENTREE_NUIT, PISCINE_JOUR, PISCINE_NUIT, TOIT_JOUR, TOIT_NUIT, AUCUN};
 
 	protected TERRAIN terrain = TERRAIN.ENTREE_JOUR;
 

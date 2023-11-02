@@ -53,6 +53,8 @@ public class VuePvZanor extends Vue {
 			imageTerrain.setImage(new Image("ArriereFond-Toit-Jour.png"));
 		if (terrain == TERRAIN.TOIT_NUIT)
 			imageTerrain.setImage(new Image("ArriereFond-Toit-Nuit.png"));
+		if (terrain == TERRAIN.AUCUN)
+			imageTerrain.setImage(new Image("6-jardinator.png"));
 	}
 
 	private Boolean zombieBool;	
