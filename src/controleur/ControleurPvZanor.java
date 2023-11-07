@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 import com.sun.media.jfxmedia.logging.Logger;
 
@@ -130,13 +131,18 @@ public class ControleurPvZanor extends Controleur{
 		
 	}
 
-	protected List<Commande> historique = new ArrayList();
+	protected Stack<Commande> historique = new Stack<Commande>();
+	protected Stack<Commande> annulations = new Stack<Commande>();
+	
 	protected TERRAIN terrainChoisi = TERRAIN.AUCUN;
+	
+	
 	public void notifierClicTerrain(TERRAIN nouveauTerrain) {
 		Commande commande = new CommandeChoisirTerrain(terrainChoisi, nouveauTerrain);
 		commande.executer(); //VuePvZanor.getInstance().afficherTerrain(terrain);
 		
-		historique.add(commande);
+		historique.push(commande);
+		
 		this.terrainChoisi = nouveauTerrain;
 		
 		
@@ -158,4 +164,15 @@ public class ControleurPvZanor extends Controleur{
 		 */
 	}
 
+	public void notifierRetour() {
+		Commande commande = historique.pop();
+		commande.annuler();
+		annulations.push(commande);
+	}
+	
+	public void notifierRefaire() {
+		Commande commande = annulations.pop();
+		commande.executer();
+		historique.push(commande);
+	}
 }

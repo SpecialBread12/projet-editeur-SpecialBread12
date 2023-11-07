@@ -1,5 +1,6 @@
 package vue;
 import java.io.File;
+import java.util.HashMap;
 
 import javax.swing.JButton;
 
@@ -54,9 +55,8 @@ public class VuePvZanor extends Vue {
 		if (terrain == TERRAIN.TOIT_NUIT)
 			imageTerrain.setImage(new Image("ArriereFond-Toit-Nuit.png"));
 		if (terrain == TERRAIN.AUCUN)
-			imageTerrain.setImage(new Image("6-jardinator.png"));
+			imageTerrain.setImage(new Image("ArriereFond-Entree-Jour.png"));
 	}
-
 	private Boolean zombieBool;	
 	public void activerControles()
 	{
@@ -290,8 +290,29 @@ public class VuePvZanor extends Vue {
 					controleur.notifierSauvegarder();
 					
 				}});
-		
+			Button actionRetour = (Button)lookup("#undo");
+					actionRetour.setOnAction(new EventHandler<>() {
+
+						@Override
+						public void handle(ActionEvent arg0) {
+							System.out.println("Action de retour");	
+							controleur.notifierRetour();
+							
+						}});
+			
+					
+					Button actionRefaire = (Button)lookup("#redo");
+					actionRefaire.setOnAction(new EventHandler<>() {
+
+					@Override
+					public void handle(ActionEvent arg0) {
+						System.out.println("Action de refaire");	
+						controleur.notifierRefaire();
+						
+					}});
+			
 	}
+	protected HashMap<String, ImageView> plantesSelonPosition = new HashMap<String, ImageView>();
 	public void planterPlantes(double x, double y, PLANTES planteChoisi) {
 		//Ajouter les plantes dans le java
 		
@@ -330,7 +351,7 @@ public class VuePvZanor extends Vue {
 		
 		AnchorPane jardin = (AnchorPane)lookup("#jardin");
 		jardin.getChildren().add(plantePlantee);
-		
+		this.plantesSelonPosition.put(x + "-" + y, plantePlantee);
 	}
 	
 	public void placerZombies(double x, double y, ZOMBIES zombiesChoisi) {
