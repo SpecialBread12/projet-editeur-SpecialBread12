@@ -48,6 +48,8 @@ public class VuePvZanor extends Vue {
 		
 		ImageView vagues = new ImageView();
 		vagues.setImage(new Image("commi.png"));
+		vagues.setLayoutX(75);
+		vagues.setLayoutY(30);
 		composant.getChildren().add(vagues);
 		
 		AnchorPane cloture = (AnchorPane)lookup("#fenetre");
