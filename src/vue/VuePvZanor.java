@@ -35,6 +35,7 @@ public class VuePvZanor extends Vue {
 		super("PvZanor.fxml", VuePvZanor.class, 1294,743);
 		super.controleur = this.controleur = new ControleurPvZanor();
 		Logger.logMsg(Logger.INFO, "new VuePvZanor()");
+		//this.plantesSelonPosition =  
 
 	}
 	
@@ -352,6 +353,14 @@ public class VuePvZanor extends Vue {
 		AnchorPane jardin = (AnchorPane)lookup("#jardin");
 		jardin.getChildren().add(plantePlantee);
 		this.plantesSelonPosition.put(x + "-" + y, plantePlantee);
+		
+		
+	}
+	
+	public void deracinerPlante(PLANTES planteChoisi, double x, double y) {
+		ImageView planteDeRacine = this.plantesSelonPosition.get(x + "-" + y);
+		AnchorPane jardin = (AnchorPane)lookup("#jardin");
+		jardin.getChildren().remove(planteDeRacine);
 	}
 	
 	public void placerZombies(double x, double y, ZOMBIES zombiesChoisi) {

@@ -10,6 +10,7 @@ import com.sun.media.jfxmedia.logging.Logger;
 
 import architecture.Controleur;
 import controleur.commande.Commande;
+import controleur.commande.CommandeAjouterPlantes;
 import controleur.commande.CommandeChoisirTerrain;
 import donnee.Exporteur;
 import javafx.scene.image.ImageView;
@@ -67,7 +68,11 @@ public class ControleurPvZanor extends Controleur{
 			jardin.ajouterZombie(zombies);
 		}
 		if (zombieBool == false) {
-			VuePvZanor.getInstance().planterPlantes(x, y, this.plantesChoisi);
+			Commande commande = new CommandeAjouterPlantes(plantesChoisi, x, y);
+			commande.executer(); //VuePvZanor.getInstance().planterPlantes(x, y, this.plantesChoisi);
+			
+			historique.push(commande);
+			
 			Plantes plantes = new Plantes(this.plantesChoisi, x, y);
 			jardin.ajouterPlante(plantes);
 		}
@@ -127,10 +132,6 @@ public class ControleurPvZanor extends Controleur{
 		//exporteur.sauvegarder(legumesDuJardin);
 		exporteur.sauvegarder(jardin);
 	}
-	public void notifierAnnuler(List<Commande> historique) {
-		
-	}
-
 	protected Stack<Commande> historique = new Stack<Commande>();
 	protected Stack<Commande> annulations = new Stack<Commande>();
 	
