@@ -41,6 +41,11 @@ public class VuePvZanor extends Vue {
 		composant.setPrefHeight(200);
 		composant.setPrefWidth(166);
 		composant.setStyle("-fx-background-color: red;");
+		
+		ImageView ecusson = new ImageView();
+		ecusson.setImage(new Image("badge.png"));
+		composant.getChildren().add(ecusson);
+		
 		AnchorPane cloture = (AnchorPane)lookup("#fenetre");
 		cloture.getChildren().add(composant);
 
