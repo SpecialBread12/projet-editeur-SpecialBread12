@@ -20,7 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Rectangle;
-import modele.BadgeCommunisme;
+import modele.Badge;
 import modele.Jardin.TERRAIN;
 import modele.Plantes;
 import modele.Plantes.PLANTES;
@@ -38,7 +38,7 @@ public class VuePvZanor extends Vue {
 		super.controleur = this.controleur = new ControleurPvZanor();
 		Logger.logMsg(Logger.INFO, "new VuePvZanor()");
 		//this.plantesSelonPosition =  
-		AnchorPane composant = new BadgeCommunisme();
+		AnchorPane composant = new Badge();
 
 		AnchorPane cloture = (AnchorPane)lookup("#fenetre");
 		cloture.getChildren().add(composant);

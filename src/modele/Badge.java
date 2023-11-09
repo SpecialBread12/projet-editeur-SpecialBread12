@@ -5,8 +5,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-public class BadgeCommunisme extends AnchorPane {
-	public BadgeCommunisme() {
+public class Badge extends AnchorPane {
+	public Badge() {
 		this.setPrefHeight(200);
 		this.setPrefWidth(166);
 		this.setStyle("-fx-background-color: white;");
