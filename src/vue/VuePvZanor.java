@@ -40,11 +40,15 @@ public class VuePvZanor extends Vue {
 		AnchorPane composant = new AnchorPane();
 		composant.setPrefHeight(200);
 		composant.setPrefWidth(166);
-		composant.setStyle("-fx-background-color: red;");
+		composant.setStyle("-fx-background-color: white;");
 		
 		ImageView ecusson = new ImageView();
 		ecusson.setImage(new Image("badge.png"));
 		composant.getChildren().add(ecusson);
+		
+		ImageView vagues = new ImageView();
+		vagues.setImage(new Image("commi.png"));
+		composant.getChildren().add(vagues);
 		
 		AnchorPane cloture = (AnchorPane)lookup("#fenetre");
 		cloture.getChildren().add(composant);
