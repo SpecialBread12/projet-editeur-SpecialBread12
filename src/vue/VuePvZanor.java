@@ -19,6 +19,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Rectangle;
+import modele.Badge;
 import modele.Jardin.TERRAIN;
 import modele.Plantes;
 import modele.Plantes.PLANTES;
@@ -36,6 +37,12 @@ public class VuePvZanor extends Vue {
 		super.controleur = this.controleur = new ControleurPvZanor();
 		Logger.logMsg(Logger.INFO, "new VuePvZanor()");
 		//this.plantesSelonPosition =  
+		AnchorPane composant = new AnchorPane();
+		composant.setPrefHeight(200);
+		composant.setPrefWidth(166);
+		composant.setStyle("-fx-background-color: red;");
+		AnchorPane cloture = (AnchorPane)lookup("#fenetre");
+		cloture.getChildren().add(composant);
 
 	}
 	
