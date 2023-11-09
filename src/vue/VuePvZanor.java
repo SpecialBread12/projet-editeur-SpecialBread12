@@ -42,15 +42,21 @@ public class VuePvZanor extends Vue {
 		composant.setPrefWidth(166);
 		composant.setStyle("-fx-background-color: white;");
 		
-		ImageView ecusson = new ImageView();
-		ecusson.setImage(new Image("badge.png"));
-		composant.getChildren().add(ecusson);
+		ImageView badge = new ImageView();
+		badge.setImage(new Image("badge.png"));
+		composant.getChildren().add(badge);
 		
-		ImageView vagues = new ImageView();
-		vagues.setImage(new Image("commi.png"));
-		vagues.setLayoutX(75);
-		vagues.setLayoutY(30);
-		composant.getChildren().add(vagues);
+		ImageView communisme = new ImageView();
+		communisme.setImage(new Image("commi.png"));
+		communisme.setLayoutX(75);
+		communisme.setLayoutY(30);
+		composant.getChildren().add(communisme);
+		
+		ImageView irak = new ImageView();
+		irak.setImage(new Image("irak.png"));
+		irak.setLayoutX(75);
+		irak.setLayoutY(165);
+		composant.getChildren().add(irak);
 		
 		AnchorPane cloture = (AnchorPane)lookup("#fenetre");
 		cloture.getChildren().add(composant);
