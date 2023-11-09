@@ -14,6 +14,7 @@ import controleur.commande.CommandeAjouterPlantes;
 import controleur.commande.CommandeChoisirTerrain;
 import donnee.Exporteur;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import modele.Terrain;
@@ -38,6 +39,7 @@ public class ControleurPvZanor extends Controleur{
 	public ControleurPvZanor()
 	{
 		Logger.logMsg(Logger.INFO, "new ControleurPvZanor()");
+
 	}
 	
 	public void initialiser()

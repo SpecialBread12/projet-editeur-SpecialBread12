@@ -20,7 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Rectangle;
-import modele.Badge;
+import modele.BadgeCommunisme;
 import modele.Jardin.TERRAIN;
 import modele.Plantes;
 import modele.Plantes.PLANTES;
@@ -38,41 +38,8 @@ public class VuePvZanor extends Vue {
 		super.controleur = this.controleur = new ControleurPvZanor();
 		Logger.logMsg(Logger.INFO, "new VuePvZanor()");
 		//this.plantesSelonPosition =  
-		AnchorPane composant = new AnchorPane();
-		composant.setPrefHeight(200);
-		composant.setPrefWidth(166);
-		composant.setStyle("-fx-background-color: white;");
-		
-		ImageView badge = new ImageView();
-		badge.setImage(new Image("badge.png"));
-		composant.getChildren().add(badge);
-		
-		ImageView communisme = new ImageView();
-		communisme.setImage(new Image("commi.png"));
-		communisme.setLayoutX(75);
-		communisme.setLayoutY(30);
-		composant.getChildren().add(communisme);
-		
-		ImageView irak = new ImageView();
-		irak.setImage(new Image("irak.png"));
-		irak.setLayoutX(75);
-		irak.setLayoutY(165);
-		composant.getChildren().add(irak);
-		
-		Label motto1 = new Label();
-		motto1.setText("Faire face");
-		motto1.setLayoutX(100);
-		motto1.setLayoutY(185);
-		motto1.setStyle("-fx-font: 25px Tahoma;");
-		composant.getChildren().add(motto1);
-		
-		Label motto2 = new Label();
-		motto2.setText("Au Nazi");
-		motto2.setLayoutX(110);
-		motto2.setLayoutY(265);
-		motto2.setStyle("-fx-font: 25px Tahoma;");
-		composant.getChildren().add(motto2);
-		
+		AnchorPane composant = new BadgeCommunisme();
+
 		AnchorPane cloture = (AnchorPane)lookup("#fenetre");
 		cloture.getChildren().add(composant);
 
