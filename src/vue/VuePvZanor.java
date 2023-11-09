@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -57,6 +58,20 @@ public class VuePvZanor extends Vue {
 		irak.setLayoutX(75);
 		irak.setLayoutY(165);
 		composant.getChildren().add(irak);
+		
+		Label motto1 = new Label();
+		motto1.setText("Faire face");
+		motto1.setLayoutX(100);
+		motto1.setLayoutY(185);
+		motto1.setStyle("-fx-font: 25px Tahoma;");
+		composant.getChildren().add(motto1);
+		
+		Label motto2 = new Label();
+		motto2.setText("Au Nazi");
+		motto2.setLayoutX(110);
+		motto2.setLayoutY(265);
+		motto2.setStyle("-fx-font: 25px Tahoma;");
+		composant.getChildren().add(motto2);
 		
 		AnchorPane cloture = (AnchorPane)lookup("#fenetre");
 		cloture.getChildren().add(composant);
