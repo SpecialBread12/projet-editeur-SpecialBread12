@@ -39,7 +39,10 @@ public class VuePvZanor extends Vue {
 		Logger.logMsg(Logger.INFO, "new VuePvZanor()");
 		//this.plantesSelonPosition =  
 		AnchorPane composant = new Badge();
-
+		((Badge) composant).afficherContour(Badge.TYPE_CONTOUR.NORMAL);
+		((Badge) composant).afficherImageHaut(Badge.TYPE_IMAGE_HAUT.COMMUNISME);
+		((Badge) composant).afficherImageBas(Badge.TYPE_IMAGE_BAS.IRAK);
+		((Badge) composant).afficherText(Badge.TYPE_TEXT.ANTINAZI);
 		AnchorPane cloture = (AnchorPane)lookup("#fenetre");
 		cloture.getChildren().add(composant);
 
