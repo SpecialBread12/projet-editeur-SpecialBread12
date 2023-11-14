@@ -41,7 +41,12 @@ public class VuePvZanor extends Vue {
 		
 		
 		
-		Badge composant = new Badge().ColorerFond("blue").avecContour(Badge.TYPE_CONTOUR.NORMAL).avecImageHaut(Badge.TYPE_IMAGE_HAUT.NAZISME).avecImageBas(Badge.TYPE_IMAGE_BAS.ZIMBABUE).avecText(Badge.TYPE_TEXT.OUI);
+		Badge composant = new Badge()
+				.ColorerFond("blue")
+				.avecContour(Badge.TYPE_CONTOUR.NORMAL)
+				.avecImageHaut(Badge.TYPE_IMAGE_HAUT.NAZISME)
+				.avecImageBas(Badge.TYPE_IMAGE_BAS.ZIMBABUE)
+				.avecText(Badge.TYPE_TEXT.OUI);
 		
 		/*
 		composant.setContour(Badge.TYPE_CONTOUR.POLICE);
