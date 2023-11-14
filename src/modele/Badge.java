@@ -24,7 +24,7 @@ public class Badge extends AnchorPane {
 			break;
 		}
 	}
-	public enum TYPE_IMAGE_HAUT{COMMUNISME};
+	public enum TYPE_IMAGE_HAUT{COMMUNISME, NAZISME};
 	public void afficherImageHaut(TYPE_IMAGE_HAUT type) {
 		switch(type) {
 		case COMMUNISME:
@@ -33,6 +33,13 @@ public class Badge extends AnchorPane {
 			communisme.setLayoutX(75);
 			communisme.setLayoutY(30);
 			this.getChildren().add(communisme);
+			break;
+		case NAZISME:
+			ImageView nazi = new ImageView();
+			nazi.setImage(new Image("nazi.png"));
+			nazi.setLayoutX(90);
+			nazi.setLayoutY(35);
+			this.getChildren().add(nazi);
 			break;
 		default:
 			System.out.println("ERROR");
