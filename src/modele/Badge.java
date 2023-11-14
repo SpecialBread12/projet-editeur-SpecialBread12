@@ -16,7 +16,7 @@ public class Badge extends AnchorPane {
 		switch(type) {
 		case NORMAL:
 			ImageView badge = new ImageView();
-			badge.setImage(new Image("badge.png"));
+			badge.setImage(new Image("/vue/decoration/badge/badge.png"));
 			this.getChildren().add(badge);
 			break;
 		default:
@@ -29,16 +29,16 @@ public class Badge extends AnchorPane {
 		switch(type) {
 		case COMMUNISME:
 			ImageView communisme = new ImageView();
-			communisme.setImage(new Image("commi.png"));
+			communisme.setImage(new Image("/vue/decoration/badge/commi.png"));
 			communisme.setLayoutX(75);
 			communisme.setLayoutY(30);
 			this.getChildren().add(communisme);
 			break;
 		case NAZISME:
 			ImageView nazi = new ImageView();
-			nazi.setImage(new Image("nazi.png"));
-			nazi.setLayoutX(90);
-			nazi.setLayoutY(35);
+			nazi.setImage(new Image("/vue/decoration/badge/nazi.png"));
+			nazi.setLayoutX(75);
+			nazi.setLayoutY(25);
 			this.getChildren().add(nazi);
 			break;
 		default:
@@ -51,7 +51,7 @@ public class Badge extends AnchorPane {
 		switch(type) {
 		case IRAK:
 			ImageView irak = new ImageView();
-			irak.setImage(new Image("irak.png"));
+			irak.setImage(new Image("/vue/decoration/badge/irak.png"));
 			irak.setLayoutX(75);
 			irak.setLayoutY(165);
 			this.getChildren().add(irak);
