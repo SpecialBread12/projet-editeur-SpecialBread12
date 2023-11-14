@@ -11,13 +11,18 @@ public class Badge extends AnchorPane {
 		this.setPrefWidth(166);
 	}
 	
-	public enum TYPE_CONTOUR{NORMAL};
+	public enum TYPE_CONTOUR{NORMAL, POLICE};
 	public void afficherContour(TYPE_CONTOUR type) {
 		switch(type) {
 		case NORMAL:
 			ImageView badge = new ImageView();
 			badge.setImage(new Image("/vue/decoration/badge/badge.png"));
 			this.getChildren().add(badge);
+			break;
+		case POLICE:
+			ImageView badgePolice = new ImageView();
+			badgePolice.setImage(new Image("/vue/decoration/badge/badge-police.png"));
+			this.getChildren().add(badgePolice);
 			break;
 		default:
 			System.out.println("ERROR");
@@ -46,7 +51,7 @@ public class Badge extends AnchorPane {
 			break;
 		}
 	}
-	public enum TYPE_IMAGE_BAS{IRAK};
+	public enum TYPE_IMAGE_BAS{IRAK, ZIMBABUE};
 	public void afficherImageBas(TYPE_IMAGE_BAS type) {
 		switch(type) {
 		case IRAK:
@@ -56,12 +61,19 @@ public class Badge extends AnchorPane {
 			irak.setLayoutY(165);
 			this.getChildren().add(irak);
 			break;
+		case ZIMBABUE:
+			ImageView zimbabue = new ImageView();
+			zimbabue.setImage(new Image("/vue/decoration/badge/zimbabue.png"));
+			zimbabue.setLayoutX(70);
+			zimbabue.setLayoutY(185);
+			this.getChildren().add(zimbabue);
+			break;
 		default:
 			System.out.println("ERROR");
 			break;
 		}
 	}
-	public enum TYPE_TEXT{ANTINAZI};
+	public enum TYPE_TEXT{ANTINAZI, OUI};
 	public void afficherText(TYPE_TEXT type) {
 		switch(type) {
 		case ANTINAZI:
@@ -78,6 +90,14 @@ public class Badge extends AnchorPane {
 			motto2.setLayoutY(265);
 			motto2.setStyle("-fx-font: 25px Tahoma;");
 			this.getChildren().add(motto2);
+			break;
+		case OUI:
+			Label mottoOui = new Label();
+			mottoOui.setText("INDEED");
+			mottoOui.setLayoutX(100);
+			mottoOui.setLayoutY(185);
+			mottoOui.setStyle("-fx-font: 25px Tahoma;");
+			this.getChildren().add(mottoOui);
 			break;
 		default:
 			System.out.println("ERROR");
