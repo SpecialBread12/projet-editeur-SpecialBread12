@@ -104,6 +104,14 @@ public class Badge extends AnchorPane {
 			break;
 		}
 	}
+	public void setCouleurFond(String couleur) {
+		AnchorPane fond = new AnchorPane();
+		fond.setPrefHeight(350);
+		fond.setPrefWidth(300);
+		fond.setStyle("-fx-background-color: "+ couleur + ";");
+		this.getChildren().add(fond);
+	}
+	
 	public Badge avecContour(TYPE_CONTOUR type) {
 		this.setContour(type);
 		return this;
@@ -118,6 +126,10 @@ public class Badge extends AnchorPane {
 	}
 	public Badge avecText(TYPE_TEXT type) {
 		this.setText(type);
+		return this;
+	}
+	public Badge ColorerFond(String string) {
+		this.setCouleurFond(string);
 		return this;
 	}
 	
