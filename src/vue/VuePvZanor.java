@@ -38,11 +38,17 @@ public class VuePvZanor extends Vue {
 		super.controleur = this.controleur = new ControleurPvZanor();
 		Logger.logMsg(Logger.INFO, "new VuePvZanor()");
 		//this.plantesSelonPosition =  
-		Badge composant = new Badge();
-		composant.afficherContour(Badge.TYPE_CONTOUR.POLICE);
-		composant.afficherImageHaut(Badge.TYPE_IMAGE_HAUT.NAZISME);
-		composant.afficherImageBas(Badge.TYPE_IMAGE_BAS.ZIMBABUE);
-		composant.afficherText(Badge.TYPE_TEXT.OUI);
+		
+		
+		
+		Badge composant = new Badge().avecContour(Badge.TYPE_CONTOUR.NORMAL).avecImageHaut(Badge.TYPE_IMAGE_HAUT.NAZISME).avecImageBas(Badge.TYPE_IMAGE_BAS.ZIMBABUE).avecText(Badge.TYPE_TEXT.OUI);
+		
+		/*
+		composant.setContour(Badge.TYPE_CONTOUR.POLICE);
+		composant.setImageHaut(Badge.TYPE_IMAGE_HAUT.NAZISME);
+		composant.setImageBas(Badge.TYPE_IMAGE_BAS.ZIMBABUE);
+		composant.setText(Badge.TYPE_TEXT.OUI);
+		*/
 		AnchorPane cloture = (AnchorPane)lookup("#fenetre");
 		cloture.getChildren().add(composant);
 

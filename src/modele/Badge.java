@@ -12,7 +12,7 @@ public class Badge extends AnchorPane {
 	}
 	
 	public enum TYPE_CONTOUR{NORMAL, POLICE};
-	public void afficherContour(TYPE_CONTOUR type) {
+	public void setContour(TYPE_CONTOUR type) {
 		switch(type) {
 		case NORMAL:
 			ImageView badge = new ImageView();
@@ -30,7 +30,7 @@ public class Badge extends AnchorPane {
 		}
 	}
 	public enum TYPE_IMAGE_HAUT{COMMUNISME, NAZISME};
-	public void afficherImageHaut(TYPE_IMAGE_HAUT type) {
+	public void setImageHaut(TYPE_IMAGE_HAUT type) {
 		switch(type) {
 		case COMMUNISME:
 			ImageView communisme = new ImageView();
@@ -52,7 +52,7 @@ public class Badge extends AnchorPane {
 		}
 	}
 	public enum TYPE_IMAGE_BAS{IRAK, ZIMBABUE};
-	public void afficherImageBas(TYPE_IMAGE_BAS type) {
+	public void setImageBas(TYPE_IMAGE_BAS type) {
 		switch(type) {
 		case IRAK:
 			ImageView irak = new ImageView();
@@ -74,7 +74,7 @@ public class Badge extends AnchorPane {
 		}
 	}
 	public enum TYPE_TEXT{ANTINAZI, OUI};
-	public void afficherText(TYPE_TEXT type) {
+	public void setText(TYPE_TEXT type) {
 		switch(type) {
 		case ANTINAZI:
 			Label motto1 = new Label();
@@ -103,6 +103,22 @@ public class Badge extends AnchorPane {
 			System.out.println("ERROR");
 			break;
 		}
+	}
+	public Badge avecContour(TYPE_CONTOUR type) {
+		this.setContour(type);
+		return this;
+	}
+	public Badge avecImageHaut(TYPE_IMAGE_HAUT type) {
+		this.setImageHaut(type);
+		return this;
+	}
+	public Badge avecImageBas(TYPE_IMAGE_BAS type) {
+		this.setImageBas(type);
+		return this;
+	}
+	public Badge avecText(TYPE_TEXT type) {
+		this.setText(type);
+		return this;
 	}
 	
 }
