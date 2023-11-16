@@ -41,22 +41,19 @@ public class VuePvZanor extends Vue {
 		
 		
 		
+		afficherBadge();
+
+	}
+	
+	public void afficherBadge() {
 		Badge composant = new Badge()
 				.ColorerFond("blue")
 				.avecContour(Badge.TYPE_CONTOUR.NORMAL)
 				.avecImageHaut(Badge.TYPE_IMAGE_HAUT.NAZISME)
 				.avecImageBas(Badge.TYPE_IMAGE_BAS.ZIMBABUE)
 				.avecText(Badge.TYPE_TEXT.OUI);
-		
-		/*
-		composant.setContour(Badge.TYPE_CONTOUR.POLICE);
-		composant.setImageHaut(Badge.TYPE_IMAGE_HAUT.NAZISME);
-		composant.setImageBas(Badge.TYPE_IMAGE_BAS.ZIMBABUE);
-		composant.setText(Badge.TYPE_TEXT.OUI);
-		*/
 		AnchorPane cloture = (AnchorPane)lookup("#fenetre");
 		cloture.getChildren().add(composant);
-
 	}
 	
 	public void afficherTerrain (TERRAIN terrain) {
